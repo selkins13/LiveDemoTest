@@ -1,17 +1,29 @@
 pipeline {
-    any agent
-    
+    agent any
+
     stages {
-      stage ('Test') {
-        echo 'Test..'
-      }
-      
-      stage ('Build') {
-        echo 'Buiding..'
-      }
-      
-      stage ('Deploy') {
-        echo 'Deploy..'
-      }
+        stage ('Pre-Test') {
+            steps {
+                echo 'Pre-test..'
+              
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+                
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+               
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
